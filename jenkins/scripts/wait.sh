@@ -6,6 +6,6 @@ i=60
 while [ $i -ge 1 ]
 do
 	sleep 1s
-	echo -n $i.." " 
+	echo $i
 	i=$((i-=1))
 done
