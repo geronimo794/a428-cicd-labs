@@ -16,7 +16,7 @@ pipeline {
                 sh './jenkins/scripts/test.sh'
 
                 // Add button confirmation to deploy
-                input message: 'Lanjutkan ke tahap Deploy?”' 
+                input message: 'Lanjutkan ke tahap Deploy?' 
             }
         }
         stage('Deploy') { 
@@ -24,7 +24,7 @@ pipeline {
                 sh './jenkins/scripts/deliver.sh' 
 
                 // Add button confirmation to kill
-                // input message: 'Sudah selesai menggunakan React App? (Klik "Proceed" untuk mengakhiri)' 
+                input message: 'Sudah selesai menggunakan React App? (Klik "Proceed" untuk mengakhiri)' 
 
                 // Add wait script 1 minutes
                 sh './jenkins/scripts/wait.sh' 
