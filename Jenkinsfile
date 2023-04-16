@@ -14,6 +14,9 @@ pipeline {
         stage('Test') {
             steps {
                 sh './jenkins/scripts/test.sh'
+
+                // Add button confirmation to deploy
+                input message: 'Lanjutkan ke tahap Deploy?”' 
             }
         }
         stage('Deploy') { 
